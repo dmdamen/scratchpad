@@ -24,3 +24,5 @@ add_compile_options(-Wall
 
 add_subdirectory(helloworld)
 add_subdirectory(movaddsubshift)
+add_subdirectory(add96)
+add_subdirectory(select_case)

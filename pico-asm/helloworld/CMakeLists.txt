@@ -1,9 +1,9 @@
-add_executable( HelloWorld
-	HelloWorld.S
+add_executable( helloworld
+	helloworld.S
 )
 
-target_link_libraries(HelloWorld pico_stdlib)
+target_link_libraries(helloworld pico_stdlib)
 
-pico_add_extra_outputs(HelloWorld)
+pico_add_extra_outputs(helloworld)
 
 

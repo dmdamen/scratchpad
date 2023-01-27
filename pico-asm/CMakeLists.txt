@@ -26,3 +26,5 @@ add_subdirectory(helloworld)
 add_subdirectory(movaddsubshift)
 add_subdirectory(add96)
 add_subdirectory(select_case)
+add_subdirectory(do_until)
+

@@ -27,4 +27,4 @@ add_subdirectory(movaddsubshift)
 add_subdirectory(add96)
 add_subdirectory(select_case)
 add_subdirectory(do_until)
-
+add_subdirectory(reg_to_ascii)

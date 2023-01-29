@@ -29,4 +29,5 @@ add_subdirectory(select_case)
 add_subdirectory(do_until)
 add_subdirectory(reg_to_ascii)
 add_subdirectory(reg_to_ascii_64)
+add_subdirectory(to_upper)
 

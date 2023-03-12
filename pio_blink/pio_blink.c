@@ -8,7 +8,7 @@ const uint LED_PIN1 = 6;
 const uint LED_PIN2 = 8;
 const uint LED_PIN3 = 11;
 
-#define SLEEP_TIME 200
+#define SLEEP_TIME 100
 
 void blink_pin_forever(PIO pio, uint sm, uint offset, uint pin, uint freq);
 
@@ -33,9 +33,9 @@ int main() {
 }
 
 void blink_pin_forever(PIO pio, uint sm, uint offset, uint pin, uint freq) {
-	blink_program_init(pio, sm, offset, pin);
+	blink_program_init(pio, sm, offset, pin, 65104.17f);
 	pio_sm_set_enabled(pio, sm, true);
 
 	printf("Blinkin pin %d at %d Hz\n", pin, freq);
-	pio->txf[sm] = clock_get_hz(clk_sys) / freq;
+	pio->txf[sm] = clock_get_hz(clk_sys) / freq / 65536;
 }

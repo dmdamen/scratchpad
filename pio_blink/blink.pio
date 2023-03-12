@@ -3,27 +3,26 @@
 ;
 
 .program blink
+.side_set 1                  
 .wrap_target
-    set pins, 1 [31]    ; Turn the LED on
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-
-    set pins, 0 [31]    ; Turn the LED on
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-
-    set pins, 0 [31]    ; Turn the LED on
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
-    mov x, x    [31]    ; Delay 32 clock cycles
+    mov x, x side 1 [15]    ; Turn LED ON
+    mov x, x side 1 [15]
+    mov x, x side 1 [15]
+    mov x, x side 1 [15]
+    mov x, x side 1 [15]
+    mov x, x side 1 [15]
+    mov x, x side 0 [15]    ; Turn LED off
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]    ; Turn LED off
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]
+    mov x, x side 0 [15]
 .wrap
 
 % c-sdk {
@@ -33,7 +32,7 @@
         pio_sm_set_consecutive_pindirs(pio, sm, pin, 1, true);
         pio_sm_config c = blink_program_get_default_config(offset);
         sm_config_set_clkdiv(&c, clkdiv);
-        sm_config_set_set_pins(&c, pin, 1);
+        sm_config_set_sideset_pins(&c, pin);
         pio_sm_init(pio, sm, offset, &c);
     }
 

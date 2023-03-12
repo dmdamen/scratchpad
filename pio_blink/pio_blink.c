@@ -8,7 +8,7 @@ const uint LED_PIN1 = 6;
 const uint LED_PIN2 = 8;
 const uint LED_PIN3 = 11;
 
-#define SLEEP_TIME 100
+#define SLEEP_TIME 50
 
 void blink_pin_forever(PIO pio, uint sm, uint offset, uint pin, uint freq);
 
